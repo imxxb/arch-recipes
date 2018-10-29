@@ -33,8 +33,16 @@ mount /dev/sda2 /mnt
 mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 
+#rank mirrors
+echo 'Setting up mirrors'
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
+
 #pacstrap
 pacstrap /mnt base
+
 
 #fstab
 genfstab -U /mnt >> /mnt/etc/fstab
