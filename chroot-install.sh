@@ -37,3 +37,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 #install rake
 pacman -S --noconfirm ruby-rake
+
+#set user 
+echo 'Setting up user'
+read -t 1 -n 1000000 discard      # discard previous input
+echo 'root:'$password | chpasswd
+useradd -m -G wheel -s /bin/zsh $user
+echo $user:$password | chpasswd
+echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
