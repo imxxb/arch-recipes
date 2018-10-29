@@ -37,11 +37,11 @@ mount /dev/sda1 /mnt/boot
 echo 'Setting up mirrors'
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 wget https://raw.githubusercontent.com/imxxb/arch-recipes/master/mirrorlist -O /etc/pacman.d/mirrorlist
-cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
+
 
 #pacstrap
 pacstrap /mnt base
-
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 
 #fstab
 genfstab -U /mnt >> /mnt/etc/fstab
