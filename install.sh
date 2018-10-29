@@ -33,5 +33,17 @@ mount /dev/sda2 /mnt
 mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 
+#pacstrap
+pacstrap /mnt base
+
 #fstab
 genfstab -U /mnt >> /mnt/etc/fstab
+
+# chroot
+wget https://raw.githubusercontent.com/imxxb/arch-recipes/master/chroot-install.sh -O /mnt/chroot-install.sh
+arch-chroot /mnt /bin/bash ./chroot-install.sh $user $password
+
+#reboot
+umount /mnt/boot
+umount /mnt
+reboot
