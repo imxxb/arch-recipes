@@ -37,6 +37,6 @@ pacman -S --noconfirm ruby-rake
 echo 'Setting up user'
 read -t 1 -n 1000000 discard      # discard previous input
 echo 'root:'$password | chpasswd
-useradd -m -G wheel -s /bin/zsh $user
+useradd -m -G wheel -s /bin/bash $user
 echo $user:$password | chpasswd
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
