@@ -16,6 +16,9 @@ else
     password=$2
 fi
 
+#update system time
+timedatectl set-ntp true
+
 #partiton disk
 parted --script /dev/sda mklabel msdos
 parted --script /dev/sda mkpart primary ext4 0% 512M 
@@ -29,3 +32,6 @@ swapon /dev/sda3
 mount /dev/sda2 /mnt
 mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
+
+#fstab
+genfstab -U /mnt >> /mnt/etc/fstab
