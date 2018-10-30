@@ -31,7 +31,7 @@ grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #install rake
-pacman -S --noconfirm ruby-rake
+pacman -S --noconfirm ruby-rake git vim dhclient sudo
 
 #set user 
 echo 'Setting up user'
