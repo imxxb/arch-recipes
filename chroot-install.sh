@@ -48,9 +48,12 @@ pacman -S --noconfirm wqy-zenhei wqy-bitmapfont
 pacman -S --noconfirm ttf-arphic-ukai ttf-arphic-uming 
 pacman -S --noconfirm opendesktop-fonts  ttf-hannom
 
+#install desktop utils 
+pacman -S --noconfirm i3 nitrogen lxterminal
+
 #install rake
 echo 'Installing development utils'
-pacman -S --noconfirm ruby-rake git vim dhclient sudo
+pacman -S --noconfirm ruby-rake git vim dhclient sudo emacs
 
 #set user 
 echo 'Setting up user'
