@@ -30,7 +30,12 @@ pacman -S --noconfirm grub
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
+#install Xorg
+echo 'Installing Xorg'
+pacman -S --noconfirm xorg xorg-xinit xterm
+
 #install rake
+echo 'Installing development utils'
 pacman -S --noconfirm ruby-rake git vim dhclient sudo
 
 #set user 
