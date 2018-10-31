@@ -62,3 +62,7 @@ echo 'root:'$password | chpasswd
 useradd -m -G wheel -s /bin/bash $user
 echo $user:$password | chpasswd
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+
+#preparing post install
+wget https://raw.githubusercontent.com/imxxb/arch-recipes/master/post-install.sh -O /home/$user/post-install.sh
+chown $user:$user /home/$user/post-install.sh
