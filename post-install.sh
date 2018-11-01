@@ -34,11 +34,17 @@ sed -i 's/^order += "battery 0"/#order += "battery 0"/' ~/.config/i3status/confi
 
 # wallpaper setup
 cd
-mkdir Pictures
+if [ -d !"Pictures"]
+then
+    mkdir Pictures
+fi
 cd Pictures
 wget https://images2.alphacoders.com/601/601091.jpg -O wallpaper.jpg
 cd ~/.config/
-mkdir nitrogen
+if [ -d !"nitrogen" ]
+ then
+     mkdir nitrogen
+fi
 cd nitrogen
 echo '[xin_-1]' > bg-saved.cfg
 echo "file=/home/$(whoami)/Pictures/wallpaper.jpg" >> bg-saved.cfg
