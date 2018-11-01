@@ -30,6 +30,16 @@ pacman -S --noconfirm grub
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
+#install administrator's tools
+pacman -S --noconfirm dhclient sudo
+
+#install virtualbox guest modules
+echo 'Installing VB-guest-modules'
+pacman -S --noconfirm virtualbox-guest-modules-arch virtualbox-guest-utils
+
+#vbox modules
+echo 'vboxsf' > /etc/modules-load.d/vboxsf.conf
+
 #install Xorg
 echo 'Installing Xorg'
 pacman -S --noconfirm xorg xorg-xinit xterm
@@ -53,7 +63,7 @@ pacman -S --noconfirm i3 nitrogen lxterminal
 
 #install rake
 echo 'Installing development utils'
-pacman -S --noconfirm ruby-rake git vim dhclient sudo emacs
+pacman -S --noconfirm ruby-rake git vim emacs
 
 #set user 
 echo 'Setting up user'
@@ -62,6 +72,9 @@ echo 'root:'$password | chpasswd
 useradd -m -G wheel -s /bin/bash $user
 echo $user:$password | chpasswd
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+
+#enable services
+systemctl enable ntpdate.service
 
 #preparing post install
 wget https://raw.githubusercontent.com/imxxb/arch-recipes/master/post-install.sh -O /home/$user/post-install.sh
