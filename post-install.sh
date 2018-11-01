@@ -36,7 +36,7 @@ sed -i 's/^order += "battery 0"/#order += "battery 0"/' ~/.config/i3status/confi
 cd
 mkdir Pictures
 cd Pictures
-wget https://initiate.alphacoders.com/download/picture/212714/jpg/228334383932218 -O wallpaper.jpg
+wget https://images2.alphacoders.com/601/601091.jpg -O wallpaper.jpg
 cd ~/.config/
 mkdir nitrogen
 cd nitrogen
