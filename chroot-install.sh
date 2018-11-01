@@ -31,7 +31,7 @@ grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #install administrator's tools
-pacman -S --noconfirm dhclient sudo
+pacman -S --noconfirm dhclient sudo wget
 
 #install virtualbox guest modules
 echo 'Installing VB-guest-modules'
