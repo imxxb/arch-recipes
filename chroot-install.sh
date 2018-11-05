@@ -32,6 +32,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 #install administrator's tools
 pacman -S --noconfirm dhclient sudo wget
+pacman -S --noconfirm base-devel
 
 #install virtualbox guest modules
 echo 'Installing VB-guest-modules'
