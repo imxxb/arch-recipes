@@ -46,18 +46,19 @@ echo 'Installing Xorg'
 pacman -S --noconfirm xorg xorg-xinit xterm
 
 #install fonts
-pacman -S --noconfirm font-mathematica texlive-core
-pacman -S --noconfirm texlive-fontsextra noto-fonts-emoji
-pacman -S --noconfirm adobe-source-han-sans-otc-fonts 
-pacman -S --noconfirm adobe-source-han-serif-otc-fonts noto-fonts-cjk 
+# pacman -S --noconfirm font-mathematica texlive-core
+# pacman -S --noconfirm texlive-fontsextra noto-fonts-emoji
+# pacman -S --noconfirm adobe-source-han-sans-otc-fonts 
+# pacman -S --noconfirm adobe-source-han-serif-otc-fonts noto-fonts-cjk 
 pacman -S --noconfirm wqy-microhei wqy-microhei-lite 
-pacman -S --noconfirm adobe-source-han-serif-cn-fonts 
-pacman -S --noconfirm adobe-source-han-serif-tw-fonts 
-pacman -S --noconfirm adobe-source-han-sans-cn-fonts 
-pacman -S --noconfirm adobe-source-han-sans-tw-fonts 
+# pacman -S --noconfirm adobe-source-han-serif-cn-fonts 
+# pacman -S --noconfirm adobe-source-han-serif-tw-fonts 
+# pacman -S --noconfirm adobe-source-han-sans-cn-fonts 
+# pacman -S --noconfirm adobe-source-han-sans-tw-fonts 
 pacman -S --noconfirm wqy-zenhei wqy-bitmapfont 
-pacman -S --noconfirm ttf-arphic-ukai ttf-arphic-uming 
-pacman -S --noconfirm opendesktop-fonts  ttf-hannom
+pacman -S --noconfirm ttf-inconsolata
+# pacman -S --noconfirm ttf-arphic-ukai ttf-arphic-uming 
+# pacman -S --noconfirm opendesktop-fonts  ttf-hannom
 
 #install desktop utils 
 pacman -S --noconfirm i3 nitrogen lxterminal
