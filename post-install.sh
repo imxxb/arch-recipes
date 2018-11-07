@@ -8,6 +8,10 @@ cd
 head -n -5 /etc/X11/xinit/xinitrc > ~/.xinitrc
 echo 'exec VBoxClient --clipboard -d &' >> ~/.xinitrc
 echo 'exec VBoxClient --display -d &' >> ~/.xinitrc
+echo 'export GTK_IM_MODULE=fcitx' >> ~/.xinitrc
+echo 'export QT_IM_MODULE=fcitx' >> ~/.xinitrc
+echo 'export XMODIFIERS="@im=fcitx"' >> ~/.xinitrc
+echo 'exec fcitx &' >> ~/.xinitrc
 echo 'exec i3 &' >> ~/.xinitrc
 echo 'exec nitrogen --restore &' >> ~/.xinitrc
 echo 'exec emacs' >> ~/.xinitrc
