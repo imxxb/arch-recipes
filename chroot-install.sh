@@ -63,6 +63,9 @@ pacman -S --noconfirm ttf-inconsolata
 #install desktop utils 
 pacman -S --noconfirm i3 nitrogen lxterminal
 
+#install input method
+pacman -S --noconfirm fcitx fcitx-configtool fcitx-gtk2 fcitx-gtk3 fcitx-googlepinyin
+
 #install rake
 echo 'Installing development utils'
 pacman -S --noconfirm ruby-rake git vim emacs
