@@ -48,7 +48,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # chroot
 wget https://raw.githubusercontent.com/imxxb/arch-recipes/master/chroot-install.sh -O /mnt/chroot-install.sh
-arch-chroot /mnt /bin/bash ./chroot-install.sh $user $password
+arch-chroot /mnt /bin/bash ./chroot-install.sh $user $password &> ./chroot-install.log
 
 #reboot
 umount /mnt/boot
