@@ -38,7 +38,7 @@ sed -i 's/^order += "battery 0"/#order += "battery 0"/' ~/.config/i3status/confi
 
 # wallpaper setup
 cd
-if [ -d !"Pictures"]
+if [ -d !"Pictures" ]
 then
     mkdir Pictures
 fi
